@@ -1,5 +1,4 @@
-activation.phaseone.com
-
-registration.presonus.com	
-
-platform.wondershare.com
+# 屏蔽激活检测
+DOMAIN,activation.phaseone.com
+DOMAIN,registration.presonus.com	
+DOMAIN,platform.wondershare.com
