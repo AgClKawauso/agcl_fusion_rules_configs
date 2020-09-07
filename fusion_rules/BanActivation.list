@@ -1,3 +1,5 @@
 # 屏蔽激活检测
 DOMAIN,activation.phaseone.com
-DOMAIN,registration.presonus.com	
+DOMAIN-SUFFIX,topazlabs.com
+DOMAIN-KEYWORD,topaz
+DOMAIN-KEYWORD,topazlabs
