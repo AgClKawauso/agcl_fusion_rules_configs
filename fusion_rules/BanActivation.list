@@ -1,5 +1,6 @@
 # 屏蔽激活检测
 DOMAIN,activation.phaseone.com
+PROCESS-NAME,CaptureOne.exe
 DOMAIN-SUFFIX,topazlabs.com
 DOMAIN-KEYWORD,topaz
 DOMAIN-KEYWORD,topazlabs
