@@ -142,7 +142,7 @@ cfw-profile-mixin:
   dns:
     enable: true # 是否启用dns false
     # ipv6: false
-    # listen: 0.0.0.0:53
+    listen: 0.0.0.0:53 # TAP模式开关
     enhanced-mode: redir-host # 模式：redir-host或fake-ip
     # fake-ip-range: 198.18.0.1/16 #
     # fake-ip-filter: # fake ip 白名单列表，如果你不知道这个参数的作用，请勿修改
@@ -167,13 +167,13 @@ cfw-profile-mixin:
        ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
          - 240.0.0.0/4
   # interface-name: WLAN
-  tun:
-    enable: true
-    stack: gvisor
-    dns-hijack:
-      - 198.18.0.2:53
-    macOS-auto-route: true
-    macOS-auto-detect-interface: true
+#   tun: # TUN模式开关
+#     enable: true
+#     stack: gvisor
+#     dns-hijack:
+#       - 198.18.0.2:53
+#     macOS-auto-route: true
+#     macOS-auto-detect-interface: true
 
 # 打断连接
 # Identify strategy of breaking connections after switching to a new proxy/profile/mode
