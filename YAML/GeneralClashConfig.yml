@@ -172,8 +172,8 @@ cfw-profile-mixin:
 #     stack: gvisor
 #     dns-hijack:
 #       - 198.18.0.2:53
-#     macOS-auto-route: true
-#     macOS-auto-detect-interface: true
+#     auto-route: true
+#     auto-detect-interface: true
 
 # 打断连接
 # Identify strategy of breaking connections after switching to a new proxy/profile/mode
