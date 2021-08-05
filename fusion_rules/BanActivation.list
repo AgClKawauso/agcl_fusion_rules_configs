@@ -1,9 +1,2 @@
 # 屏蔽激活检测
 DOMAIN,activation.phaseone.com
-DOMAIN,activation.phaseone.com
-DOMAIN,industrial.phaseone.com
-DOMAIN,coweb.phaseone.com
-DOMAIN,help.phaseone.com 
-DOMAIN-SUFFIX,topazlabs.com
-DOMAIN-KEYWORD,topaz
-DOMAIN-KEYWORD,topazlabs
