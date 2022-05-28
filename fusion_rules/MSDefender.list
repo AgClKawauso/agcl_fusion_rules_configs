@@ -1,0 +1,6 @@
+# 内容：MSDefender
+# 数量：4条
+DOMAIN-SUFFIX,wd.microsoft.com
+DOMAIN-SUFFIX,wdcp.microsoft.com
+DOMAIN-SUFFIX,wdcpalt.microsoft.com
+DOMAIN-SUFFIX,mysecurity.microsoft.com
