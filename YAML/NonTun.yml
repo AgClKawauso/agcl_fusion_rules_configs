@@ -64,7 +64,7 @@ experimental:
 
 dns:
   enable: true # 是否启用dns false
-  # ipv6: false
+  ipv6: true
   # listen: 0.0.0.0:53 # TAP模式开关
   enhanced-mode: redir-host # 模式：redir-host或fake-ip
   # fake-ip-range: 198.18.0.1/16 #
@@ -145,7 +145,7 @@ cfw-latency-url: http://www.gstatic.com/generate_204
 cfw-profile-mixin:
   dns:
     enable: true # 是否启用dns false
-    # ipv6: false
+    ipv6: true
     listen: 0.0.0.0:53 # TAP模式开关
     enhanced-mode: fake-ip # 模式：redir-host或fake-ip
     fake-ip-range: 198.18.0.1/16 #
