@@ -64,34 +64,38 @@ experimental:
 
 dns:
   enable: true # 是否启用dns false
-  # ipv6: false
+  ipv6: true
   # listen: 0.0.0.0:53 # TAP模式开关
   enhanced-mode: fake-ip # 模式：redir-host或fake-ip
   fake-ip-range: 198.18.0.1/16 #
   fake-ip-filter: # fake ip 白名单列表，如果你不知道这个参数的作用，请勿修改
-     - '*.lan'
-     - "localhost.ptlogin2.qq.com"
-     - "dns.msftncsi.com"
-     - "www.msftncsi.com"
-     - "www.msftconnecttest.com"
+    - '*.lan'
+    - "localhost.ptlogin2.qq.com"
+    - "dns.msftncsi.com"
+    - "www.msftncsi.com"
+    - "www.msftconnecttest.com"
   nameserver:
-     - 223.5.5.5 # 阿里DNS
-     - 180.76.76.76 # 百度DNS
-     - 119.29.29.29 # 腾讯DNS
-     - 117.50.11.11 # ONE DNS拦截版 恶意网站拦截、广告过滤
-     - 117.50.10.10 # ONE DNS纯净版 直接返回其真实的响应结果
-     - 114.114.114.114 # 114DNS
+    - 119.29.29.29
+    - "[2402:4e00::]:53"
+    - https://doh.pub/dns-query
+    - tls://dot.pub:853
+    - 223.5.5.5
+    - "[2400:3200::1]:53"
+    - https://dns.alidns.com/dns-query
+    - tls://dns.alidns:853
   fallback:
-     - 8.8.8.8 # 谷歌DNS
-     - 1.1.1.1 # Cloudflare DNS
-     - tls://1.0.0.1:853
-     - tls://dns.google:853
-     - https://cloudflare-dns.com/dns-query
-     - https://dns.google/dns-query
+    - 8.8.8.8
+    - 1.1.1.1
+    - "[2001:4860:4860::8888]:53"
+    - "[2606:4700:4700::1111]:53"
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - tls://dns.google:853
+    - tls://one.one.one.one:853
   fallback-filter:
-     geoip: true # 默认
-     ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
-       - 240.0.0.0/4
+    geoip: true # 默认
+    ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
+      - 240.0.0.0/4
 tun: # TUN模式开关
   enable: true
   stack: gvisor
@@ -144,7 +148,7 @@ cfw-latency-url: http://www.gstatic.com/generate_204
 cfw-profile-mixin:
   dns:
     enable: true # 是否启用dns false
-    # ipv6: false
+    ipv6: true
     listen: 0.0.0.0:53 # TAP模式开关
     enhanced-mode: fake-ip # 模式：redir-host或fake-ip
     fake-ip-range: 198.18.0.1/16 #
@@ -155,19 +159,23 @@ cfw-profile-mixin:
       - "www.msftncsi.com"
       - "www.msftconnecttest.com"
     nameserver:
-      - 223.5.5.5 # 阿里DNS
-      - 180.76.76.76 # 百度DNS
-      - 119.29.29.29 # 腾讯DNS
-      - 117.50.11.11 # ONE DNS拦截版 恶意网站拦截、广告过滤
-      - 117.50.10.10 # ONE DNS纯净版 直接返回其真实的响应结果
-      - 114.114.114.114 # 114DNS
+      - 119.29.29.29
+      - "[2402:4e00::]:53"
+      - https://doh.pub/dns-query
+      - tls://dot.pub:853
+      - 223.5.5.5
+      - "[2400:3200::1]:53"
+      - https://dns.alidns.com/dns-query
+      - tls://dns.alidns:853
     fallback:
-      - 8.8.8.8 # 谷歌DNS
-      - 1.1.1.1 # Cloudflare DNS
-      - tls://1.0.0.1:853
-      - tls://dns.google:853
-      - https://cloudflare-dns.com/dns-query
+      - 8.8.8.8
+      - 1.1.1.1
+      - "[2001:4860:4860::8888]:53"
+      - "[2606:4700:4700::1111]:53"
       - https://dns.google/dns-query
+      - https://cloudflare-dns.com/dns-query
+      - tls://dns.google:853
+      - tls://one.one.one.one:853
     fallback-filter:
        geoip: true # 默认
        ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
