@@ -100,7 +100,7 @@ dns:
       - 240.0.0.0/4
 tun: # TUN模式开关
   enable: true
-  stack: gvisor
+  stack: system
   dns-hijack:
     - 198.18.0.2:53
   auto-route: true
