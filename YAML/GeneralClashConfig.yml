@@ -87,13 +87,10 @@ dns:
     - tls://dns.alidns:853
   fallback:
     - 8.8.8.8
-    - 1.1.1.1
     - "[2001:4860:4860::8888]:53"
     - "[2606:4700:4700::1111]:53"
     - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
     - tls://dns.google:853
-    - tls://one.one.one.one:853
   fallback-filter:
     geoip: true # 默认
     ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
@@ -171,13 +168,10 @@ cfw-profile-mixin:
       - tls://dns.alidns:853
     fallback:
       - 8.8.8.8
-      - 1.1.1.1
       - "[2001:4860:4860::8888]:53"
       - "[2606:4700:4700::1111]:53"
       - https://dns.google/dns-query
-      - https://cloudflare-dns.com/dns-query
       - tls://dns.google:853
-      - tls://one.one.one.one:853
     fallback-filter:
        geoip: true # 默认
        ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
