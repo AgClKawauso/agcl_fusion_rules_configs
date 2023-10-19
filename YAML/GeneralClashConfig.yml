@@ -234,9 +234,5 @@ cfw-bypass-bak:
   # 直连列表
   # MyList
   # CN域名直连
-  - "*.cn"
-  - "*.中国"
-  - "*.公司"
-  - "*.网络"
   - "localhost"
   - <local>
