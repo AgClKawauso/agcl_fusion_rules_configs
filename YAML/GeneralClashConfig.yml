@@ -16,7 +16,7 @@ mixed-port: 7890
 redir-port: 7892
 
 # 允许局域网的连接（可用来共享代理）
-allow-lan: false
+allow-lan: true
 
 # 仅在将allow-lan设置为true时适用
 # #"*": 绑定所有IP地址
