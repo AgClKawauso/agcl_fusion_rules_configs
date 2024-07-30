@@ -88,29 +88,17 @@ dns:
     - "network-test.debian.org"
     - "localhost.ptlogin2.qq.com"
   nameserver:
-    - 119.29.29.29
-    - "[2402:4e00::]:53"
     - https://doh.pub/dns-query
     - tls://dot.pub:853
-    - 223.5.5.5
-    - "[2400:3200::1]:53"
     - https://dns.alidns.com/dns-query
     - tls://dns.alidns.com:853
   fallback:
-    - 8.8.8.8
-    - "[2001:4860:4860::8888]:53"
     - https://dns.google/dns-query
     - tls://dns.google:853
-    - 1.1.1.1
-    - "[2606:4700:4700::1111]:53"
     - https://cloudflare-dns.com/dns-query
     - tls://one.one.one.one:853
-    - 208.67.222.222
-    - "[2620:119:35::35]:53"
     - https://dns.opendns.com/dns-query
     - tls://dns.opendns.com:853
-    - 9.9.9.9
-    - "[2620:fe::9]:53"
     - https://dns.quad9.net/dns-query
     - tls://dns.quad9.net:853
   fallback-filter:
