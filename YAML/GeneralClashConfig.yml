@@ -105,13 +105,20 @@ dns:
     geoip: true # 默认
     ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
       - 240.0.0.0/4
-# tun: # TUN模式开关
-#   enable: true
-#   stack: system
-#   dns-hijack:
-#     - 198.18.0.2:53
-#   auto-route: true
-#   auto-detect-interface: true 
+tun: # TUN模式开关
+  enable: true
+  stack: mixed
+  dns-hijack:
+    - "any:53"
+    - "tcp://any:53"
+    - 198.18.0.2:53
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  route-exclude-address:
+    - 192.168.0.0/16
+    - fc00::/7
+    - 172.16.0.0/12
 
 # 1. clash DNS 请求逻辑：
 #   (1) 当访问一个域名时， nameserver 与 fallback 列表内的所有服务器并发请求，得到域名对应的 IP 地址。
