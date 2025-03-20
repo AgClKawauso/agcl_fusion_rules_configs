@@ -63,14 +63,24 @@ experimental:
 #hosts:
 #   '*.clash.dev': 127.0.0.1
 #   'alpha.clash.dev': '::1'
-
 dns:
-  enable: true # 是否启用dns false
+  enable: true
+  cache-algorithm: arc
+  prefer-h3: true
+  use-hosts: true
+  use-system-hosts: true
+  respect-rules: false
+  listen: 0.0.0.0:1053
   ipv6: true
-  # listen: 0.0.0.0:53 # TAP模式开关
-  enhanced-mode: fake-ip # 模式：redir-host或fake-ip
-  fake-ip-range: 198.18.0.1/16 #
-  fake-ip-filter: # fake ip 白名单列表，如果你不知道这个参数的作用，请勿修改
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - "2402:4e00::"
+    - "2400:3200::1"
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
     - "+.stun.*.*"
     - "+.stun.*.*.*"
     - "+.stun.*.*.*.*"
@@ -87,24 +97,48 @@ dns:
     - "resolver1.opendns.com"
     - "network-test.debian.org"
     - "localhost.ptlogin2.qq.com"
+  nameserver-policy:
+    '+.arpa': '10.0.0.1'
+    'rule-set:cn':
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - tls://dot.pub:853
+    - tls://dns.alidns.com:853
   nameserver:
     - https://doh.pub/dns-query
-    - tls://dot.pub:853
     - https://dns.alidns.com/dns-query
+    - tls://dot.pub:853
     - tls://dns.alidns.com:853
   fallback:
     - https://dns.google/dns-query
-    - tls://dns.google:853
     - https://cloudflare-dns.com/dns-query
-    - tls://one.one.one.one:853
     - https://dns.opendns.com/dns-query
-    - tls://dns.opendns.com:853
     - https://dns.quad9.net/dns-query
+    - tls://dns.google:853
+    - tls://one.one.one.one:853
+    - tls://dns.opendns.com:853
     - tls://dns.quad9.net:853
+    - tls://8.8.4.4
+    - tls://1.1.1.1
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    - tls://dot.pub:853
+    - tls://dns.alidns.com:853
+  direct-nameserver:
+    - system
+  direct-nameserver-follow-policy: false
   fallback-filter:
-    geoip: true # 默认
-    ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
+    geoip: true
+    geoip-code: CN
+    geosite:
+      - gfw
+    ipcidr:
       - 240.0.0.0/4
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
 tun: # TUN模式开关
   enable: true
   stack: mixed
