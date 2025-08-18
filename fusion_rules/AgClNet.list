@@ -1,2 +1,2 @@
-DOMAIN-SUFFIX,mifgfs.xyz
-DOMAIN-SUFFIX,nexconvert.com
+IP-CIDR,107.189.1.237/8,no-resolve
+IP-CIDR6,2605:6400:30:f416::/64,no-resolve
